@@ -2,55 +2,90 @@
 
 <html>
   <head>
+    <meta charset="UTF-8" />
+
     <title>Shuoyuan Chen</title>
     <link rel="stylesheet" href="resourses/style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <header>
-      <div>
-        <h1>Shuoyuan Chen</h1>
-      </div>
       <nav>
+        <div>
+          <h1>Shuoyuan Chen</h1>
+        </div>
         <ul>
-          <li><a>Home</a></li>
-          <li><a>Projects</a></li>
-          <li><a>Skills</a></li>
-          <li><a>Galley</a></li>
-          <li><a>Contact</a></li>
+          <li><a href="#aboutMe">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="skills">Skills</a></li>
+          <li><a href="#gallery">Galley</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <hr />
     </header>
 
     <main>
-      <div id="aboutMe">
-        <h2>About Me</h2>
-        <div class="words">
-          <p>
-            Hi! I'm Shuoyuan and am a software engineer and a painting
-            enthusiast. I had a MSc in Chemistry and then a MEng in Electrical &
-            Computer Engineering. I love developing software and solving
-            real-world challenges. I pursue a balance between perfection and
-            efficiency. I want to present my ideas to the world!
-          </p>
-          <p>
-            I spend my free time writing stories and painting. I am constantly
-            improving my skills and hope one day I can deliver some impressive
-            works.
-          </p>
-        </div>
-        <div class="portrait">
-          <img alt="Shuoyuan Chen" src="resourses/portrait.jpg" />
-        </div>
-      </div>
+      <section id="aboutMe">
+        <div >
+          <div class="words">
+            <img
+            class="portrait"
+            alt="Shuoyuan Chen"
+            src="resourses/portrait.jpg"
+          />
+            <h2>About Me</h2>
+           
+            <p>
+              Hi! I'm Shuoyuan and am a software engineer and a painting
+              enthusiast. I had a MSc in Chemistry and then a MEng in Electrical
+              & Computer Engineering. I love developing software and solving
+              real-world challenges. I pursue a balance between perfection and
+              efficiency. I want to present my ideas to the world!
+            </p>
+            <p>
+              I spend my free time writing stories and painting. I am constantly
+              improving my skills and hope one day I can deliver some impressive
+              works.
+            </p>
+            
+          </div>
 
-      <div id="projects">
-        <div class="project">
-          <div class="projectTitle">
-            <h3>Infrastructure-less Mobile File Sharing App</h3>
-            <img alt="Java" src="resourses/icons_128/java_black.png" />
+          
+        </div>
+      </section>
+
+      <section id="projects">
+        <script  type="text/javascript">
+            function showHide(x) {
+                const elements = document.querySelectorAll('#'+x+' p');
+                const title = document.querySelector('#'+x+' h3 span');
+                for(element of elements) {
+                    let display = window.getComputedStyle(element).getPropertyValue('display');
+                    if(display === 'none') {
+                        element.style.display='list-item';
+                        title.innerHTML="&#8595";
+
+                    } else {
+                        element.style.display='none';
+                        title.innerHTML="&#8600";
+                    }
+                }
+                
+                
+               
+            }
+            </script>
+        <h2>Projects</h2>
+        <div id="p1" class="project">
+          <div onclick="showHide('p1')" class="projectTitle">
+            <h3><span>&#8600</span> Infrastructure-less Mobile File Sharing App</h3>
+            <img class="blackIcon" alt="Java" src="resourses/icons_128/java_black.png" />
           </div>
           <p>
             A non-expert-friendly mobile App enabling local P2P file sharing
@@ -62,13 +97,14 @@
           </p>
         </div>
 
-        <div class="project">
-          <div class="projectTitle">
-            <h3>Restaurant Web App</h3>
-            <img alt="Python" src="resourses/icons_128/python_black.png" />
-            <img alt="MySQL" src="resourses/icons_128/mysql_black.png" />
-            <img alt="Django" src="resourses/icons_128/django.png" />
-            <img alt="AWS" src="resourses/icons_128/aws_black.png" />
+        <div id="p2" class="project">
+            
+          <div onclick="showHide('p2')" class="projectTitle">
+            <h3 ><span>&#8600</span> Restaurant Web App</h3>
+            <img class="blackIcon" alt="Python" src="resourses/icons_128/python_black.png" />
+            <img class="blackIcon" alt="MySQL" src="resourses/icons_128/mysql_black.png" />
+            <img class="blackIcon" alt="Django" src="resourses/icons_128/django.png" />
+            <img class="blackIcon" alt="AWS" src="resourses/icons_128/aws_black.png" />
           </div>
 
           <p>
@@ -81,11 +117,12 @@
           </p>
         </div>
 
-        <div class="project">
-          <div class="projectTitle">
-            <h3>Relational Database File System</h3>
-            <img alt="Python" src="resourses/icons_128/python_black.png" />
-            <img alt="MySQL" src="resourses/icons_128/mysql_black.png" />
+        <div id="p3" class="project">
+          
+          <div onclick="showHide('p3')" class="projectTitle">
+            <h3 ><span>&#8600</span> Relational Database File System</h3>
+            <img class="blackIcon" alt="Python" src="resourses/icons_128/python_black.png" />
+            <img class="blackIcon" alt="MySQL" src="resourses/icons_128/mysql_black.png" />
           </div>
           <p>
             A functional linx file system in MySQL, wrapped in Python to support
@@ -97,11 +134,11 @@
           </p>
         </div>
 
-        <div class="project">
-          <div class="projectTitle">
-            <h3>Automated Website Fuzzing with WFuzz</h3>
-            <img alt="Python" src="resourses/icons_128/python_black.png" />
-            <img alt="HTML5" src="resourses/icons_128/html_black.png" />
+        <div id="p4" class="project">
+          <div onclick="showHide('p4')" class="projectTitle">
+            <h3><span>&#8600</span> Automated Website Fuzzing with WFuzz</h3>
+            <img class="blackIcon" alt="Python" src="resourses/icons_128/python_black.png" />
+            <img class="blackIcon" alt="HTML5" src="resourses/icons_128/html_black.png" />
           </div>
           <p>
             A WFuzz extension for automated fuzzing and fast error diagnosis.
@@ -112,10 +149,10 @@
           </p>
         </div>
 
-        <div class="project">
-          <div class="projectTitle">
-            <h3>The Forecasting of COVID-19 Epidemic in Canada</h3>
-            <img alt="Python" src="resourses/icons_128/python_black.png" />
+        <div id="p5" class="project">
+          <div onclick="showHide('p5')" class="projectTitle">
+            <h3><span>&#8600</span> The Forecasting of COVID-19 Epidemic in Canada</h3>
+            <img class="blackIcon" alt="Python" src="resourses/icons_128/python_black.png" />
           </div>
           <p>
             Prediction of COVID-19 situation in Canada after reopening using
@@ -126,40 +163,65 @@
             resurgence of infection in Ontario.
           </p>
         </div>
-      </div>
+      </section>
 
-      <div id="skills">
+      <section id="skills">
         <h2>Skills</h2>
         <div class="icons">
-          <img alt="Java" src="resourses/icons_128/java.png" />
-          <img alt="Python" src="resourses/icons_128/python.png" />
-          <img alt="MySQL" src="resourses/icons_128/mysql.png" />
-          <img alt="Linux" src="resourses/icons_128/linux.png" />
-          <img alt="Git" src="resourses/icons_128/git.png" />
-          <img alt="JavaScript" src="resourses/icons_128/javascript.png" />
-          <img alt="HTML5" src="resourses/icons_128/html.png" />
-          <img alt="CSS" src="resourses/icons_128/css.png" />
-          <img alt="AWS" src="resourses/icons_128/aws.png" />
+          <img class="colorIcon" alt="Java" src="resourses/icons_128/java.png" />
+          <img class="colorIcon" alt="Python" src="resourses/icons_128/python.png" />
+          <img class="colorIcon" alt="MySQL" src="resourses/icons_128/mysql.png" />
+          <img class="colorIcon" alt="Linux" src="resourses/icons_128/linux.png" />
+          <img class="colorIcon" alt="Git" src="resourses/icons_128/git.png" />
+          <img class="colorIcon" alt="JavaScript" src="resourses/icons_128/javascript.png" />
+          <img class="colorIcon" alt="HTML5" src="resourses/icons_128/html.png" />
+          <img class="colorIcon" alt="CSS" src="resourses/icons_128/css.png" />
+          <img class="colorIcon" alt="AWS" src="resourses/icons_128/aws.png" />
         </div>
-      </div>
-      <div>
+      </section>
+
+      <section id="gallery">
         <h2>Gallery</h2>
-        <div class></div>
-      </div>
-      <div id="contact">
+        <div class="images">
+          <a class='container' href="https://www.pixiv.net/en/artworks/81709633"
+            ><img
+              class="paint"
+              alt="arknight"
+              src="resourses/gallery/arknight.jpg"
+          /></a>
+          <a class='container' href="https://www.pixiv.net/en/artworks/81838153"
+            ><img class="paint" alt="grey" src="resourses/gallery/grey.jpg"
+          /></a>
+          <a class='container' href="https://www.pixiv.net/en/artworks/82221828"
+            ><img class="paint" alt="ishtar" src="resourses/gallery/ishtar.jpg"
+          /></a>
+          <a class='container' href="https://www.pixiv.net/en/artworks/86721869"
+            ><img
+              class="paint"
+              alt="cyberpunk"
+              src="resourses/gallery/cyberpunk.jpg"
+          /></a>
+        </div>
+      </section>
+
+      <section id="contact">
         <h2>Contact</h2>
         <p>Want to know more about me? I would love to hear from you!</p>
         <div class="icons">
-          <a href="https://www.linkedin.com/in/shuoyuan-chen/"></a
-          ><img alt="LinkedIn" src="resourses/icons_128/linkedin.png" />
-          <a href="https://github.com/s487chen"></a
-          ><img alt="GitHub" src="resourses/icons_128/github.png" />
-          <a href="mailto:cshuoyuan@gmail.com"></a
-          ><img alt="Email" src="resourses/icons_128/email.png" />
-          <a href="https://www.pixiv.net/en/users/21425824"></a
-          ><img alt="Pixiv" src="resourses/icons_128/pixiv.png" />
+          <a href="https://www.linkedin.com/in/shuoyuan-chen/"
+            ><img class="blackIcon" alt="LinkedIn" src="resourses/icons_128/linkedin.png"
+          /></a>
+          <a href="https://github.com/s487chen"
+            ><img class="blackIcon" alt="GitHub" src="resourses/icons_128/github.png"
+          /></a>
+          <a href="mailto:cshuoyuan@gmail.com"
+            ><img class="blackIcon" alt="Email" src="resourses/icons_128/email.png"
+          /></a>
+          <a href="https://www.pixiv.net/en/users/21425824"
+            ><img class="blackIcon" alt="Pixiv" src="resourses/icons_128/pixiv.png"
+          /></a>
         </div>
-      </div>
+      </section>
     </main>
     <footer>
       <p>Made by Shuoyuan Chen in Canada</p>
